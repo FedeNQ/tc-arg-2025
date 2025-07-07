@@ -368,6 +368,32 @@
 \end{frame}
 
 
+\section{Prefix Sum}
+\begin{frame}
+  \frametitle{Prefix Sum}
+
+  Dado un vector $V$, queremos poder calcular rápidamente la suma de los primeros $X$ elementos, o de cualquier subarreglo.
+
+  \vspace{0.3cm}
+  Para eso construimos un \textbf{vector auxiliar} $P$ de tamaño $n+1$, donde:
+  \[
+    P[i] = V[0] + V[1] + \dots + V[i-1]
+  \]
+
+  \vspace{0.3cm}
+  \textbf{Ejemplo:}  
+
+  $V = [2,\ 6,\ 2,\ 5,\ 10]$  
+
+  $P = [0,\ 2,\ 8,\ 10,\ 15,\ 25]$
+
+  \vspace{0.3cm}
+  Entonces, la suma del subarreglo $V[l\,..\,r]$ se puede calcular en $\mathcal{O}(1)$ como:
+  \[
+    P[r+1] - P[l]
+  \]
+\end{frame}
+
 \section{Entrada y salida}
 
 \begin{frame}{Entrada y salida en C++}
@@ -410,11 +436,21 @@
   \begin{itemize}
   \item Acostumbrarse a usar un notebook
   
-  \item Aprender a estimar tiempos 
-  \item Leer editoriales → entender el \textbf{cómo}, no solo el código
-  \item Usar IA como herramienta, no como solución
+  \item Aprender a estimar tiempos, antes de resolver
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]{Consejos personales}
+  \begin{itemize}
+  
+  \item Asegurarse de entender bien el enunciado, comprobar viendo los ejemplos
+  \item Intentar hacer al menos una demo minima de la solucion
+  \item Leer editoriales → entender el \textbf{cómo}, no solo el código
+  \item Usar IA como herramienta, no como solución
+
+  \end{itemize}
+\end{frame}
+
 
 
 \begin{frame}[fragile]{Consejos personales}
